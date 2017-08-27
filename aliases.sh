@@ -6,7 +6,7 @@ alias cn='make clean'
 
 alias g='git status'
 
-alias am='git commit -am "'
+alias am='git commit -am'
 
 alias p='git push'
 
