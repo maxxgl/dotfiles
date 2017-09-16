@@ -69,7 +69,7 @@ set noerrorbells
 set showmatch
 
 " Remap VIM 0 to first non-blank character
-map 0 ^t 
+map 0 ^
 
 set t_Co=256
 
@@ -98,9 +98,9 @@ set nocompatible
 set backspace=indent,eol,start
 
 set history=500     " keep 50 lines of command line history
-set ruler       " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch   " do incremental searching
+set ruler           " show the cursor position all the time
+set showcmd         " display incomplete commands
+set incsearch       " do incremental searching
 set nobackup
 set nowritebackup
 set noswapfile
