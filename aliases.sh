@@ -1,3 +1,5 @@
+export PS1=\u@\h\w\$ 
+
 alias m='make'
 
 alias c='clear'
