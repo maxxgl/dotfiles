@@ -27,9 +27,46 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
+" full path fuzzy search
+Bundle 'kien/ctrlp.vim'
+
+" Formatting for js
+Bundle "pangloss/vim-javascript"
+
+" more js syntax options
+Bundle 'maksimr/vim-jsbeautify'
+
+" pretty sweet linting/error checking. Works on save
+Bundle 'https://github.com/scrooloose/syntastic.git'
+
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'airblade/vim-gitgutter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
+
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+
+" Statusline
+" https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
+set statusline=                                     " Override default
+" set statusline+=%1*%{fugitive#statusline()[4:-2]}%* " Show fugitive git info
+set statusline+=%2*\ %f\ %m\ %r%*                   " Show filename/path
+set statusline+=%3*%=%*                             " Set right-side status info after this line
+set statusline+=%4*%l/%L:%v%*                       " Set <line number>/<total lines>:<column>
+set statusline+=%5*\ %*                             " Set ending space
+
+set noerrorbells
+
+set showmatch
+
+" Remap VIM 0 to first non-blank character
+map 0 ^
 
 if v:progname =~? "evim"
   finish
@@ -95,6 +132,14 @@ nnoremap <Leader><Leader> <c-^>
 set ttimeout
 set ttimeoutlen=20
 set notimeout
+
+" Leader Mappings
+map <Space> <leader>
+map <Leader>w :update<CR>
+map <Leader>q :qall<CR>
+map <Leader>gs :Gstatus<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>gp :Gpush<CR>
 
 let g:html_indent_tags = 'li\|p'
 
