@@ -53,6 +53,7 @@ let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 
 set diffopt+=vertical
+set splitbelow
 
 " Statusline
 " https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
@@ -113,7 +114,6 @@ set colorcolumn=+1
 
 " Line Numbers
 set number
-set numberwidth=5
 
 " Tab completion
 " will insert tab at beginning of line,
