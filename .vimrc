@@ -52,6 +52,8 @@ filetype plugin indent on    " required
 let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 
+set diffopt+=vertical
+
 " Statusline
 " https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
 set statusline=                                     " Override default
@@ -66,7 +68,9 @@ set noerrorbells
 set showmatch
 
 " Remap VIM 0 to first non-blank character
-map 0 ^
+map 0 ^t 
+
+set t_Co=256
 
 if v:progname =~? "evim"
   finish
@@ -92,10 +96,10 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=500	    " keep 50 lines of command line history
-set ruler	    	" show the cursor position all the time
-set showcmd	    	" display incomplete commands
-set incsearch		" do incremental searching
+set history=500     " keep 50 lines of command line history
+set ruler       " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch   " do incremental searching
 set nobackup
 set nowritebackup
 set noswapfile
@@ -217,7 +221,7 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+  set autoindent    " always set autoindenting on
 
 endif " has("autocmd")
 
@@ -226,5 +230,5 @@ endif " has("autocmd")
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+      \ | wincmd p | diffthis
 endif
