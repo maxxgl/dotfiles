@@ -1,10 +1,10 @@
 #!/bin/bash
 
-rm ../.vimrc
-ln -s vimrc ../.vimrc
+rm .vimrc
+ln -s dots/vimrc .vimrc
 
-rm -rf ../.vim
-ln -s vim ../.vim
+rm -rf .vim
+cp -r dots/vim .vim
 
-rm ../.bashrc
-ln -s aliases.sh ../.bashrc
+rm .bashrc
+ln -s dots/aliases.sh .bashrc
