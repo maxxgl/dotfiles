@@ -9,3 +9,6 @@ ln -s dots/vimrc .vimrc
 
 rm .bashrc
 ln -s dots/aliases.sh .bashrc
+
+vim +PluginInstall +qall
+
