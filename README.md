@@ -1,1 +1,8 @@
-put the aliases in .bashrc or /etc/.bashrc or something
+# Maxx's Dotfiles
+
+    $ cd ~
+    $ git clone https://github.com/maxxgl/dots.git
+    $ . dots/setup.sh
+    $ vim
+    :PluginInstall
+
