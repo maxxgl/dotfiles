@@ -140,7 +140,7 @@ set notimeout
 " Leader Mappings
 map <Space> <leader>
 map <Leader>w :update<CR>
-map <Leader>q :qall<CR>
+map <Leader>q :q<CR>
 map <Leader>gs :Gstatus<CR>
 map <Leader>gc :Gcommit<CR>
 map <Leader>gp :Gpush<CR>
