@@ -57,11 +57,17 @@ let g:airline_powerline_fonts = 1
 set diffopt+=vertical
 set splitbelow
 
-let g:go_highlight_structs = 1 
+let g:go_highlight_structs = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
 
 " Statusline
 " https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
