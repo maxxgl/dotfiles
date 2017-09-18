@@ -45,6 +45,8 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'airblade/vim-gitgutter'
+Plugin 'moll/vim-node'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,7 +57,6 @@ let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 
 set diffopt+=vertical
-set splitbelow
 
 let g:go_highlight_structs = 1
 let g:go_highlight_methods = 1
@@ -68,6 +69,9 @@ let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 
 " Statusline
 " https://github.com/pengwynn/dotfiles/blob/master/vim/vimrc.symlink#L160
