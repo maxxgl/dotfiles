@@ -33,6 +33,8 @@ Bundle 'kien/ctrlp.vim'
 " Formatting for js
 Bundle "pangloss/vim-javascript"
 
+Plugin 'fatih/vim-go'
+
 " more js syntax options
 Bundle 'maksimr/vim-jsbeautify'
 
