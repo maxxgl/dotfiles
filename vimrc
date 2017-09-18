@@ -142,6 +142,7 @@ set notimeout
 map <Space> <leader>
 map <Leader>w :update<CR>
 map <Leader>q :q<CR>
+map <Leader>gw :Gwrite<CR>
 map <Leader>gs :Gstatus<CR>
 map <Leader>gc :Gcommit<CR>
 map <Leader>gp :Gpush<CR>
