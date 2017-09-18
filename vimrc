@@ -114,6 +114,7 @@ set colorcolumn=+1
 
 " Line Numbers
 set number
+set numberwidth=5
 
 " Tab completion
 " will insert tab at beginning of line,
