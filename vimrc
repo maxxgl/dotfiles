@@ -91,7 +91,7 @@ if v:progname =~? "evim"
   finish
 endif
 
-let $BASH_ENV = "~/.bash_aliases"
+let $BASH_ENV = "~/.bashrc"
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
