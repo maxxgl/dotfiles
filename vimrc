@@ -57,6 +57,7 @@ let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 
 set diffopt+=vertical
+set splitbelow
 
 let g:go_highlight_structs = 1
 let g:go_highlight_methods = 1
