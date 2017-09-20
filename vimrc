@@ -47,6 +47,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'moll/vim-node'
 Plugin 'elzr/vim-json'
+Plugin 'valloric/youcompleteme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -105,6 +106,7 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
 
 syntax enable
 set background=dark
