@@ -88,9 +88,6 @@ set noerrorbells
 
 set showmatch
 
-" Remap VIM 0 to first non-blank character
-map 0 ^
-
 set t_Co=256
 
 if v:progname =~? "evim"
@@ -108,12 +105,11 @@ set shiftwidth=4
 set expandtab
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
 
+let g:gitgutter_realtime = 0
+
 syntax enable
 set background=dark
 colorscheme solarized
-
-" Use Vim settings, rather than Vi settings (much better!).
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
