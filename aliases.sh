@@ -1,6 +1,6 @@
 shopt -s expand_aliases
 
-export PS1="\u@\h\w\\n=> "
+export PS1="\u@\h\w$ "
 
 alias m='make'
 
