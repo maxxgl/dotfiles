@@ -1,0 +1,60 @@
+#|
+  One defcfg entry may be added, which is used for configuration key-pairs. These
+  configurations change kanata's behaviour at a more global level than the other
+  configuration entries.
+|#
+
+(defcfg
+  #|
+  This configuration will process all keys pressed inside of kanata, even if
+  they are not mapped in defsrc. This is so that certain actions can activate
+  at the right time for certain input sequences. By default, unmapped keys are
+  not processed through kanata due to a Windows issue related to AltGr. If you
+  use AltGr in your keyboard, you will likely want to follow the simple.kbd
+  file while unmapping lctl and ralt from defsrc.
+  |#
+  process-unmapped-keys yes
+  concurrent-tap-hold true
+)
+
+(defsrc
+  esc
+  caps i
+       f    h   j    k    l    ;
+  lalt spc  left  right
+)
+
+(deflayer default
+  grv
+  @capsremap _
+         _    _    _    _    _    @ijkl
+  _    @spc    _    _
+)
+
+(deflayer arrows
+  _
+  _ _
+       @hm  left down up rght    _
+  _    _    _    _
+)
+
+(deflayer homeend
+  _
+  _ _
+       _    home pgdn pgup end    _
+  _    _    home end
+)
+
+(deflayer ijkl
+  _
+  _                up
+       @hm  _ left down rght    _
+  _    _    _    _
+)
+
+(defalias
+  spc (tap-hold 150 150 spc lctl)
+  capsremap (tap-hold-press 200 200 esc (layer-toggle arrows))
+  ijkl (tap-hold 200 200 ; (layer-toggle ijkl))
+  hm (layer-toggle homeend)
+)
