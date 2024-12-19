@@ -1,22 +1,11 @@
 #!/bin/bash
 
-rm -rf .vim
-cp -r dots/vim .vim
-git clone https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
-
-rm .vimrc
-ln -s dots/vimrc .vimrc
-
-rm .bashrc
-ln -s dots/aliases.sh .bashrc
-
-
 # Font stuff
-if [[ `uname` == 'Darwin' ]]; then
-  font_dir="$HOME/Library/Fonts"
+if [[ $(uname) == 'Darwin' ]]; then
+	font_dir="$HOME/Library/Fonts"
 else
-  font_dir="$HOME/.local/share/fonts"
-  mkdir -p $font_dir
+	font_dir="$HOME/.local/share/fonts"
+	mkdir -p $font_dir
 fi
 
 echo "Installing Patched Inconsolata"
@@ -26,6 +15,16 @@ echo "Resetting font cache, this may take a moment..."
 fc-cache -f $font_dir
 "Powerline Inconsolata installed to $font_dir"
 
+mv ~/.bashrc ~/.old-bashrc
+mv ~/.gitconfig ~/.old-gitconfig
+ln -s ~/dotfiles/.bashrc ~/.zshrc
 
-vim +PluginInstall +qall
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.alacritty.toml ~/.alacritty.toml
+ln -s ~/dotfiles/.tmux ~/.tmux
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/.tmuxifier ~/.tmuxifier
 
+mkdir ~/.config
+ln -s ~/dotfiles/lazygit ~/.config/lazygit
+ln -s ~/dotfiles/nvim ~/.config/nvim
