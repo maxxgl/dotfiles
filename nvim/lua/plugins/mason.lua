@@ -16,7 +16,7 @@ return {
       "marksman",
       "prettier",
       "pyright",
-      "ruff-lsp",
+      "ruff",
       "shfmt",
       "sqlfluff",
       "stylua",
