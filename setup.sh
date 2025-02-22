@@ -21,14 +21,12 @@ mv ~/.gitconfig ~/.gitconfig-old
 mv ~/.alacritty.toml ~/.alacritty.toml-old
 mv ~/.tmux ~/.tmux-old
 mv ~/.tmux.conf ~/.tmux.conf-old
-mv ~/.tmuxifier ~/.tmuxifier-old
 
-ln -s ~/dotfiles/.bashrc ~/.zshrc
+ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.alacritty.toml ~/.alacritty.toml
 ln -s ~/dotfiles/.tmux ~/.tmux
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.tmuxifier ~/.tmuxifier
 
 mkdir ~/.config
 mv ~/.config/nvim ~/.config/old-nvim

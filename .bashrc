@@ -32,7 +32,7 @@ HISTFILESIZE=2000
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-	debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
@@ -46,17 +46,15 @@ esac
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-	if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-		# We have color support; assume it's compliant with Ecma-48
-		# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-		# a case would tend to support setf rather than setaf.)
-		color_prompt=yes
-	else
-		color_prompt=
-	fi
+  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+  else
+    color_prompt=
+  fi
 fi
-
-export PS1="\u@\h\w$ "
 
 # if [ "$color_prompt" = yes ]; then
 # 	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -75,14 +73,14 @@ export PS1="\u@\h\w$ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto'
-	#alias dir='dir --color=auto'
-	#alias vdir='vdir --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
 
-	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
@@ -103,7 +101,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -119,34 +117,34 @@ fi
 
 # My stuff
 git_branch() {
-	if git rev-parse --git-dir >/dev/null 2>&1; then
-		printf " %s" "$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')"
-	else
-		printf ""
-	fi
+  if git rev-parse --git-dir >/dev/null 2>&1; then
+    printf " %s" "$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')"
+  else
+    printf ""
+  fi
 }
 
 git_color() {
-	local STATUS=$(git status 2>&1)
-	if [[ "$STATUS" == *'Not a git repository'* ]]; then
-		printf '\001\033[0m\002' # reset color
-	else
-		if [[ "$STATUS" != *'working tree clean'* ]]; then
-			printf '\001\033[0;31m\002' # red if need to commit
-		else
-			if [[ "$STATUS" == *'Your branch is ahead'* ]]; then
-				printf '\001\033[0;33m\002' # yellow if need to push
-			else
-				printf '\001\033[0;32m\002' # else green
-			fi
-		fi
-	fi
+  local STATUS=$(git status 2>&1)
+  if [[ "$STATUS" == *'Not a git repository'* ]]; then
+    printf '\001\033[0m\002' # reset color
+  else
+    if [[ "$STATUS" != *'working tree clean'* ]]; then
+      printf '\001\033[0;31m\002' # red if need to commit
+    else
+      if [[ "$STATUS" == *'Your branch is ahead'* ]]; then
+        printf '\001\033[0;33m\002' # yellow if need to push
+      else
+        printf '\001\033[0;32m\002' # else green
+      fi
+    fi
+  fi
 }
 
-# export PS1='\[\033[0m\]\w\[\033[0m\]$(git_color)$(git_branch)\[\033[0;34m\] \$ \[\033[0m\]'
+export PS1='\[\033[0m\]\w\[\033[0m\]$(git_color)$(git_branch)\[\033[0;34m\] \$ \[\033[0m\]'
 # Set the prompt
-setopt PROMPT_SUBST
-PROMPT='%F{white}%~$(git_color)$(git_branch)%F{blue} $ %f'
+# setopt PROMPT_SUBST
+# PROMPT='%F{white}%~$(git_color)$(git_branch)%F{blue} $ %f'
 
 alias c='clear'
 alias g='git status'
@@ -162,15 +160,15 @@ alias run='docker run --rm -it $(docker build -q .)'
 alias prun='docker run --rm -it -p 8080:80 $(docker build -q .)'
 alias h='nvim ~/Documents/history.md'
 alias clip='xclip -selection clipboard'
-alias python=python3
+# alias python=python3
 alias v=nvim
 alias b="git branch -vv"
 alias bb="git fetch -p && git branch -vv"
 branch_prune() {
-	git fetch -p
-	for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do
-		git branch -D $branch --verbose
-	done
+  git fetch -p
+  for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do
+    git branch -D $branch --verbose
+  done
 }
 alias bp=branch_prune
 alias mermaid="docker run --platform linux/amd64 --publish 8000:8080 ghcr.io/mermaid-js/mermaid-live-editor"
@@ -179,13 +177,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
-PATH="$PATH:$PYTHON_BIN_PATH:/usr/local/bin/kustomize"
+# PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+# PATH="$PATH:$PYTHON_BIN_PATH:/usr/local/bin/kustomize"
 
 export PATH="$PATH:/opt/nvim-linux64/bin"
 alias nv=nvim
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)"
 
 alias k="kubectl --kubeconfig ~/.kube/dev-kube-config.yaml"
 alias prod="kubectl --kubeconfig ~/.kube/prod-kube-config.yaml"
@@ -195,7 +191,7 @@ export KUBE_EDITOR=nvim
 alias tab="echo -ne '\033]0;Remote\a'"
 
 export PATH="$PATH:/opt/mssql-tools18/bin"
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -204,3 +200,5 @@ if [ -f '/Users/maxxlehmann/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/max
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/maxxlehmann/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/maxxlehmann/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH=~/.npm-global/bin:$PATH
