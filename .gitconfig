@@ -10,7 +10,5 @@
 	autoSetupRemote = true
 [init]
 	defaultBranch = main
-[http]
-	sslVerify = false
 [credential]
 	helper = cache --timeout=86400
