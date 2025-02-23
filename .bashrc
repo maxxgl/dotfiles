@@ -180,7 +180,7 @@ export NVM_DIR="$HOME/.nvm"
 # PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 # PATH="$PATH:$PYTHON_BIN_PATH:/usr/local/bin/kustomize"
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 alias nv=nvim
 
 alias k="kubectl --kubeconfig ~/.kube/dev-kube-config.yaml"
@@ -193,7 +193,7 @@ alias tab="echo -ne '\033]0;Remote\a'"
 export PATH="$PATH:/opt/mssql-tools18/bin"
 # . "$HOME/.cargo/env"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/maxxlehmann/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/maxxlehmann/google-cloud-sdk/path.zsh.inc'; fi
